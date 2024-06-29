@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 function runGame(gameType) {
 
+    // Generate two random numbers between 1 and 25
+	// Math.floor rounds down to the whole number
+	// Math.random generates random numbers
+
     document.getElementById("answer-box").value = "";
     document.getElementById("answer-box").focus();
 
@@ -48,7 +52,7 @@ function runGame(gameType) {
     }
     else if (gameType === "division") {
         displayDivisionQuestion(num1, num2);
-    }else {
+    } else {
         alert(`Unknown game type: ${gameType}`);
         throw `Unknown game type: ${gameType}. Aborting!`;
     }
@@ -100,7 +104,7 @@ function calculateCorrectAnswer() {
         var x= operand2;
         var quotient = Math.floor(y/x);
         return [quotient , "division"];
-    }else {
+    } else {
         alert(`Unimplemented operator ${operator}`);
         throw `Unimplemented operator ${operator}. Aborting!`;
     }
